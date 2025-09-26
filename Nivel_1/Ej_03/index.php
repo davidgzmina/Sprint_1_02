@@ -11,6 +11,9 @@
             margin: 20px;
             color: #ffffffff;
         }
+        h2{
+            color: red;
+        }
 
     </style>
 </head>
@@ -25,8 +28,13 @@
         $N = 1.5;
         $M = 2.5;
 
-       
+        $a = "10";
+        $b = "5";
 
+        $operacion="suma";
+        $resultado;
+       
+        // Parte A
         echo  " El valor de la variable X es = $X y el valor de la variable Y es = $Y. <br>";
         echo "La SUMA de las variables X e Y es de = " . $X + $Y . "<br>";
         echo "La RESTA de las variables X e Y es de = " . $X - $Y . "<br>";
@@ -43,43 +51,29 @@
         . ", M = " . $M*2 . ".<br>" ;
         echo "La SUMA de todas variables es de = " . $N + $M + $X + $Y . "<br>";
         echo "El PRODUCTO de todas variables es de = " . $N * $M * $X * $Y . "<br>";
-        
-        
-        // Comprobar que se reciben los argumentos necesarios
-        if ($argc != 4) {
-            echo "Uso: php calculadora.php <num1> <num2> <operacion>\n";
-            echo "Operaciones permitidas: suma, resta, multiplicacion, division\n";
-            exit(1);
-        }
 
-        // Capturar los argumentos
-        $num1 = $argv[1];
-        $num2 = $argv[2];
-        $operacion = strtolower($argv[3]);
+        // Parte b
+        $resultado = match($operacion){
+            "suma"=> "El resultado de la suma es = " . $a + $b,
+            "resta"=> "El resultado de la resta es = " . $a - $b,
+            "multiplicacion"=>"El resultado de la multiplicacion es = " .  $a * $b,
+            "division"=> "El resultado de la division es = " . $a % $b,
+            default=> "Esa operacion no es posible",
+        };
 
-        // Definir la función
-        function calcular($a, $b, $operacion) {
-            switch ($operacion) {
-                case "suma":
-                    return $a + $b;
-                case "resta":
-                    return $a - $b;
-                case "multiplicacion":
-                    return $a * $b;
-                case "division":
-                    if ($b == 0) {
-                        return "Error: no se puede dividir por cero.";
-                    }
-                    return $a / $b;
-                default:
-                    return "Operación no válida.";
-            }
-        }
 
-        // Mostrar el resultado
-        $resultado = calcular($num1, $num2, $operacion);
-        echo "Resultado: $resultado\n";
+        echo "<h2>$resultado</h2>";
+
+
+
+
+
+
+
+
+
         ?>
+
 
 
 
