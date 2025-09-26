@@ -39,13 +39,13 @@
         echo "La SUMA de las variables X e Y es de = " . $X + $Y . "<br>";
         echo "La RESTA de las variables X e Y es de = " . $X - $Y . "<br>";
         echo "El PRODUCTO de las variables X e Y es de = " . $X * $Y . "<br>";
-        echo "El MODULO de las variables X e Y es de = " . $X % $Y . "<br>";
+        echo "El MODULO de las variables X e Y es de = " . $X / $Y . "<br>";
 
         echo  "<br>El valor de la variable N es = $N y el valor de la variable M es = $M. <br>";
         echo "La SUMA de las variables N y M es de = " . $N + $M . "<br>";
         echo "La RESTA de las variables N y M es de = " . $N - $M . "<br>";
         echo "El PRODUCTO de las variables N y M es de = " . $N * $M . "<br>";
-        echo "El MODULO de las variables N y M es de = " . $N % $M . "<br>";
+        echo "El MODULO de las variables N y M es de = " . $N / $M . "<br>";
 
         echo "<br>El DOBLE de todas las variables es: X = " . $X*2 . ", Y = " . $Y*2 . ", N = " . $N*2 
         . ", M = " . $M*2 . ".<br>" ;
@@ -57,7 +57,7 @@
             "suma"=> "El resultado de la suma es = " . $a + $b,
             "resta"=> "El resultado de la resta es = " . $a - $b,
             "multiplicacion"=>"El resultado de la multiplicacion es = " .  $a * $b,
-            "division"=> "El resultado de la division es = " . $a % $b,
+            "division"=> "El resultado de la division es = " . $a / $b,
             default=> "Esa operacion no es posible",
         };
 
