@@ -4,49 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-        <style>
+    <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #8eecffff;
+            background-color: #058160ff;
             margin: 20px;
-            color: #281b5cff;
+            color: #ffffffff;
         }
 
     </style>
 </head>
 <body>
-    
-<?php
-/*
-Escribir una función para verificar el grado de un/a estudiante según la nota.
-Condiciones:
-- Si la nota es del 60% o más, el grado debe ser Primera División.
-- Si la nota está entre el 45% y el 59%, el grado debe ser Segunda División.
-- Si la nota está entre el 33% y el 44%, el grado debe ser Tercera División.
-- Si la nota es menor al 33%, el/la estudiante reprobará.
+    <?php
+    /*
+    Haz un programa que implemente una función que cuente hasta un número determinado.
+    Si no se incluye un número determinado, este deberá tener un valor por defecto igual a 10.
+    Además, esta función debe tener un segundo parámetro que indique de cuánto en cuánto se cuenta (de 1 en 1, de 2 en 2…). 
+    La cuenta debe mostrarse en pantalla paso a paso.
+    */
+        
 
-*/
-    $nota = 75;
-    $resultado = "";
+        $limite = 10;
+        $numCuenta = 2;
+        $numVeces = $limite / $numCuenta;
 
-    if($nota < 33){
-        $resultado = "Como tu nota es del " . $nota ."% y es menor del 33%, debes repetir.";
-    }
-    else if($nota > 33 && $nota < 45){
-        $resultado = "Como tu nota es del " . $nota ."% y esta comprendida entre el 33% y el 44%,
-        tienes una cualificación de Tercera División.";
-    }
-    else if($nota > 44 && $nota < 59){
-        $resultado = "Como tu nota es del " . $nota ."% y esta comprendida entre el 44% y el 59%,
-        tienes una cualificación de Segunda División.";
-    }
-    else{
-        $resultado = " Felicidadeees!!! como tu nota es del " . $nota ."% y es superior al 60% tienes una cualificación de Primera División!!";
-    }
+       
+        $resultado = "Has alcanzado tu limite. Haciendo un total de $numVeces cuentas.";
 
-    echo "<h1>$resultado</h1>";
+        echo "<h1>Vamos a contar de $numCuenta en $numCuenta hasta que llegues a $limite que es tu limite.<br></h1>";
 
-?>
+            for($i = 0; $i <= $limite; $i += $numCuenta){
+
+                echo "En esta cuenta llevas = $i.<br>";
+
+            }
+             
+
+
+        echo "<h2>$resultado</h2>";
+
+
+    ?>
 
 </body>
 </html>
