@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             background-color: #8eecffff;
             margin: 20px;
-            color: #281b5cff;
+            color: #030006ff;
         }
 
     </style>
@@ -26,23 +26,29 @@ Condiciones:
 - Si la nota es menor al 33%, el/la estudiante reprobará.
 
 */
-    $nota = 75;
+    $nota = 63;
     $resultado = "";
 
-    if($nota < 33){
-        $resultado = "Como tu nota es del " . $nota ."% y es menor del 33%, debes repetir.";
+
+    function verificarGrado($nota){
+        if($nota < 33){
+            return "Como tu nota es del " . $nota ."% y es menor del 33%, debes repetir.";
+        }
+        else if($nota > 33 && $nota < 45){
+            return "Como tu nota es del " . $nota ."% y esta comprendida entre el 33% y el 44%,
+            tienes una cualificación de Tercera División.";
+        }
+        else if($nota > 44 && $nota < 59){
+            return "Como tu nota es del " . $nota ."% y esta comprendida entre el 44% y el 59%,
+            tienes una cualificación de Segunda División.";
+        }
+        else{
+            return " Felicidadeees!!! como tu nota es del " . $nota ."% y es superior al 60% tienes una cualificación
+            de Primera División!!";
+        }
     }
-    else if($nota > 33 && $nota < 45){
-        $resultado = "Como tu nota es del " . $nota ."% y esta comprendida entre el 33% y el 44%,
-        tienes una cualificación de Tercera División.";
-    }
-    else if($nota > 44 && $nota < 59){
-        $resultado = "Como tu nota es del " . $nota ."% y esta comprendida entre el 44% y el 59%,
-        tienes una cualificación de Segunda División.";
-    }
-    else{
-        $resultado = " Felicidadeees!!! como tu nota es del " . $nota ."% y es superior al 60% tienes una cualificación de Primera División!!";
-    }
+
+    $resultado = verificarGrado($nota);
 
     echo "<h1>$resultado</h1>";
 
