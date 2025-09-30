@@ -7,21 +7,11 @@
 
     <style>
         body {
-            
             font-family: Arial, sans-serif;
             background-color: black;
-            margin: 0;
-            height: 100vh; 
-            display: flex;
-            justify-content: center; 
-            align-items: center;     
-            }
-
-        
-        h1{
             color: white;
-            font-size:80px;
-        }
+            font-size:50px;
+            }
 
     </style>
 </head>
@@ -31,24 +21,25 @@
 ¡Charlie me mordió el dedo! Charlie te morderá el dedo exactamente el 50% del tiempo.
 Escribe la función isBitten() que devuelva TRUE con un 50% de probabilidad y FALSE en caso contrario.
 
- tip funcion rand ()
+tip funcion rand ()
 
 */
 
-$dedoMordido = rand(1,2);
 
+function isBitten(){
 
-function isBitten ($dedoMordido){
-    if ($dedoMordido == 1){
-        return "Charlie te ha mordido el dedo!!!";
-    }
-    else{
-        return "Charlie no te ha mordido el dedo, esta vez...";
-    }
-    
+    $dedoMordido = rand(1,2);    
+
+        if ($dedoMordido == 1){
+            return "Charlie te ha mordido el dedo!!!";
+        }
+        else{
+            return "Charlie no te ha mordido el dedo, esta vez...";
+        }
+        
 } 
 
-$resultado = isBitten($dedoMordido);
+$resultado = isBitten();
 
 echo "<h1>$resultado</h1>";
 
