@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #058160ff;
-            margin: 20px;
-            color: #ffffffff;
-        }
 
-    </style>
-</head>
-<body>
-    <?php
+<?php
     /*
     Haz un programa que implemente una función que cuente hasta un número determinado.
     Si no se incluye un número determinado, este deberá tener un valor por defecto igual a 10.
@@ -23,33 +7,35 @@
     La cuenta debe mostrarse en pantalla paso a paso.
     */
         
-        $a = 0;
-        $limite = 10;
+  
+    $limite = 10;
+    $numCuenta = 0;
+
+
+
+    function contar ($limite, $numCuenta)
+    {
         $numCuenta = 2;
 
-        echo "<h1>Vamos a contar de $numCuenta en $numCuenta hasta que llegues a $limite que es tu limite:<br></h1>";
-
-        function contador ($limite, $numCuenta){
-
-            $numVeces = $limite / $numCuenta;
+        echo "Vamos a contar de $numCuenta en $numCuenta hasta que llegues a $limite que es tu limite:" . PHP_EOL;
+        
+        $numVeces = $limite / $numCuenta;
 
             for($i = 0; $i <= $limite; $i += $numCuenta)
             {
-               echo "En esta cuenta llevas = $i.<br>";
+               echo "En esta cuenta llevas = $i." . PHP_EOL;
             }
 
-            return  "<br>Has alcanzado tu limite. Haciendo un total de $numVeces cuentas.";
-        }
+        return  "Has alcanzado tu limite (" . $limite . ").". PHP_EOL 
+        . "Haciendo un total de $numVeces cuentas.". PHP_EOL 
+        ."Teniendo en cuenta que contabas de " . $numCuenta ." en " . $numCuenta . ".";
+    }
 
 
-        $resultado = contador($limite,$numCuenta);
+        $resultado = contar($limite,$numCuenta);
 
         echo $resultado;
 
 
+?>
 
-
-    ?>
-
-</body>
-</html>
