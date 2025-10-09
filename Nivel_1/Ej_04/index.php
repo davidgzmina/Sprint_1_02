@@ -6,17 +6,13 @@
     Además, esta función debe tener un segundo parámetro que indique de cuánto en cuánto se cuenta (de 1 en 1, de 2 en 2…). 
     La cuenta debe mostrarse en pantalla paso a paso.
     */
-        
-  
-    $limite = 10;
-    $numCuenta = 0;
+
+ 
 
 
 
-    function contar ($limite, $numCuenta)
+    function contar ($numCuenta, $limite = 10)
     {
-        $numCuenta = 2;
-
         echo "Vamos a contar de $numCuenta en $numCuenta hasta que llegues a $limite que es tu limite:" . PHP_EOL;
         
         $numVeces = $limite / $numCuenta;
@@ -28,14 +24,10 @@
 
         return  "Has alcanzado tu limite (" . $limite . ").". PHP_EOL 
         . "Haciendo un total de $numVeces cuentas.". PHP_EOL 
-        ."Teniendo en cuenta que contabas de " . $numCuenta ." en " . $numCuenta . ".";
+        ."Teniendo en cuenta que contabas de " . $numCuenta ." en " . $numCuenta . "."; 
     }
 
-
-        $resultado = contar($limite,$numCuenta);
-
-        echo $resultado;
-
+    echo contar(2);
 
 ?>
 
